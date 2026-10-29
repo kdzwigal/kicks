@@ -7,8 +7,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { CalibratedSample, ThemeMode } from '../types/triki';
 import { RingBuffer } from '../services/ringBuffer';
-import { trikiBle } from '../services/bleManager';
-import { sensorPipeline } from '../services/sensorPipeline';
+import { trikiBle, trikiBleRight } from '../services/bleManager';
+import { sensorPipeline, sensorPipelineRight } from '../services/sensorPipeline';
 import { Activity, ArrowLeftRight } from 'lucide-react';
 
 interface SkiaCanvasOscilloscopeProps {
@@ -43,7 +43,9 @@ export const SkiaCanvasOscilloscope: React.FC<SkiaCanvasOscilloscopeProps> = ({
   const handleToggleByteOrder = () => {
     const next = !trikiBle.getSwapAccelGyroBytes();
     trikiBle.setSwapAccelGyroBytes(next);
+    trikiBleRight.setSwapAccelGyroBytes(next);
     sensorPipeline.resetCalibrationBias();
+    sensorPipelineRight.resetCalibrationBias();
     setSwappedBytes(next);
   };
 

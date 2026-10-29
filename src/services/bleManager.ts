@@ -87,9 +87,9 @@ export class TrikiBleManager {
   private lastButtonEdgeTime: number = 0;
   private virtualButtonUntil: number = 0;
 
-  // Packet sensor order: false (default) = Bytes [2..7] Accel, Bytes [8..13] Gyro
-  // true = Bytes [2..7] Gyro, Bytes [8..13] Accel
-  public swapAccelGyroBytes: boolean = false;
+  // Packet sensor order: true (default) = Bytes [2..7] Gyro, Bytes [8..13] Accel
+  // false = Bytes [2..7] Accel, Bytes [8..13] Gyro
+  public swapAccelGyroBytes: boolean = true;
 
   // LED state management
   public ledControlMethod: LedControlMethod = 'auto';
@@ -101,8 +101,8 @@ export class TrikiBleManager {
     this.addLog(
       `Kolejność sensorów w ramce 0x22: ${
         swap
-          ? 'Bajty [2..7]=Żyroskop, [8..13]=Akcelerometr'
-          : 'Bajty [2..7]=Akcelerometr, [8..13]=Żyroskop (Domyślne)'
+          ? 'Bajty [2..7]=Żyroskop, [8..13]=Akcelerometr (Domyślne)'
+          : 'Bajty [2..7]=Akcelerometr, [8..13]=Żyroskop'
       }`
     );
   }

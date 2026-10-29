@@ -1,0 +1,6 @@
+{
+  "summary":  "Zaktualizowany plan implementacji TrikiScope Dual-Foot Spatial Tracking uwzględniający dokładną budowę fizyczną kapsla Triki (pojedyncza zielona dioda LED umieszczona na osi Y, przycisk centralny na środku obudowy, brak sterowania kolorami RGB) oraz usunięcie detekcji gestów na rzecz czystego śledzenia trajektorii 3D stóp (ZUPT) i parametrów chodu.",
+  "updatedAt":  "2026-10-29T08:51:02.665880874Z",
+  "requestFeedback":  true,
+  "userFacing":  true
+}
